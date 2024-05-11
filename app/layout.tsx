@@ -4,7 +4,7 @@ import "./globals.css";
 import '@radix-ui/themes/styles.css';
 import { Theme as RadixTheme, Section } from "@radix-ui/themes";
 import { ThemeProvider as NextThemeProvider } from "next-themes"
-import Navbar from "@/components/primitives/Navbar";
+import Navbar from "@/components/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} dark:bg-gray-900`}>
         <NextThemeProvider attribute="class">
-          <RadixTheme accentColor="iris" radius="medium">
+          <RadixTheme hasBackground={false} accentColor="indigo" radius="large">
             <Section pt="0">
               <Navbar />
               {children}
